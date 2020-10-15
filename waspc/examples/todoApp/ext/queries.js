@@ -1,6 +1,5 @@
 import HttpError from '@wasp/core/HttpError.js'
 
-
 export const getTasks = async (args, context) => {
   const Task = context.entities.Task
   /*
@@ -15,7 +14,8 @@ export const getTasks = async (args, context) => {
 }
 
 export const getTask = async ({ id }, context) => {
-  const task = await prisma.task.findOne({ where: { id } })
+  const Task = context.entities.Task
+  const task = await Task.findOne({ where: { id } })
 
   return task
 }

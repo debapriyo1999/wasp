@@ -32,7 +32,7 @@ page About {
 
 route "/profile" -> page Profile
 page Profile {
-    component: import { profilePage } from "@ext/pages/ProfilePage"
+    component: import { ProfilePage } from "@ext/pages/ProfilePage"
 }
 
 // Page for viewing a specific task
@@ -50,7 +50,8 @@ query getTasks {
 }
 
 query getTask {
-  fn: import { getTask } from "@ext/queries.js"
+  fn: import { getTask } from "@ext/queries.js",
+  entities: [Task]
 }
 
 // --------- Actions --------- //
